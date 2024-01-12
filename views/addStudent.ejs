@@ -1,0 +1,33 @@
+<%- include('partial/headAddStudent.ejs') %>
+  <body>
+    <div class="container">
+      <form action="/student/add" method="POST">
+        <div>
+          <label for="">First Name</label>
+          <input type="text" name="first_name" />
+        </div>
+        <div>
+          <label for="">Last Name</label>
+          <input type="text" name="last_name" />
+        </div>
+        <div>
+          <label for="">Email</label>
+          <input type="email" name="email" />
+        </div>
+        <div>
+          <label for="">Gender</label>
+          <select name="gender" id="gender">
+            <option value="select">Choose One</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div>
+          <label for="">Birth Date</label>
+          <input type="date" name="birth_date" id="date" />
+        </div>
+        <input class="button-add" type="submit" value="addStudent" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<%- include('partial/head2.ejs') %> 
+<body>
+  <h1>Student</h1>
+  <table>
+    <th>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mail</th>
+        <th>Gender</th>
+        <th>Birth Date</th>
+        <th class="action"></th>
+      </tr>
+    </th>
+    <tbody>
+      <% for (let i = 0; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].first_name %></td>
+        <td><%= data[i].last_name %></td>
+        <td><%= data[i].email %></td>
+        <td><%= data[i].gender %></td>
+        <td><%= data[i].birth_date%></td>
+        <td>
+          <a href="/student/<%= data[i].id %>/edit" class="edit">Edit</a>
+          <span>|</span>
+          <a href="/student/<%= data[i].id %>/delete" class="remove"
+            >Remove</a
+          >
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <button><a href="/student/add">add</a></button>
+</body>
+</html>
